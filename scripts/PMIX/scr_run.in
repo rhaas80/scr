@@ -6,8 +6,8 @@
 
 prog=scr_pmix_run_bash
 
-libdir="@X_LIBDIR@"
-bindir="@X_BINDIR@"
+libdir="$(cd "$(dirname "$0")/../lib" ; pwd -P)"
+bindir="$(cd "$(dirname "$0")" ; pwd -P)"
 __have_libcppr="@HAVE_LIBCPPR@"
 
 # Print usage

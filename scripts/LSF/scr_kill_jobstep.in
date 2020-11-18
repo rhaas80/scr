@@ -1,13 +1,13 @@
 #!/usr/bin/perl -w
 use strict;
 use Getopt::Long qw/ :config gnu_getopt ignore_case /;
-use lib '@X_DATADIR@/scr';
+use FindBin;
 
 # This script uses the scancel command to kill the job step with the 
 # job step id supplied on the command line
 
 my $prog = "scr_kill_jobstep";
-my $bin = "@X_BINDIR@";
+my $bin = "$FindBin::Bin";
 
 my $killCmd = "scancel";
 

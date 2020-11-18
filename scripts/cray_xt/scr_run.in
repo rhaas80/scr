@@ -5,8 +5,8 @@
 launcher="aprun"
 prog="scr_$launcher"
 
-libdir="@X_LIBDIR@"
-bindir="@X_BINDIR@"
+libdir="$(cd "$(dirname "$0")/../lib" ; pwd -P)"
+bindir="$(cd "$(dirname "$0")" ; pwd -P)"
 
 # Print usage
 if [ -z "$1" ]; then
@@ -39,7 +39,7 @@ while [ ${1:+x} ]; do
             shift 2 ;;
         --restart-cmd=*|-rs=*)
             restart_cmd=${1#*=}
-            if [ -z "$restart_cmd" ]; then shift; restart_cmd=$1; fi
+            if [ -z "$restart_cmd" ]; then shift; restart_cmd=$1;
             shift ;;
         --run-cmd=*|-rc=*)
             run_cmd=${1#*=}

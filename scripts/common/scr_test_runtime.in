@@ -1,9 +1,10 @@
 #!/usr/bin/perl -w
 use strict;
+use FindBin;
 
 # this script checks for runtime dependencies
 
-my $bindir = "@X_BINDIR@";
+my $bindir = "$FindBin::Bin/../bin";
 my $prog = "scr_test_runtime";
 
 my $pdsh = "@PDSH_EXE@";

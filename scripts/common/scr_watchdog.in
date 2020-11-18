@@ -1,6 +1,7 @@
 #!/usr/bin/perl -w
 use strict;
-use lib '@X_DATADIR@/scr';
+use FindBin;
+use lib "$FindBin::Bin/../share/scr";
 use scr_param;
 use Getopt::Long qw/ :config gnu_getopt ignore_case /;
 
@@ -9,7 +10,7 @@ use Getopt::Long qw/ :config gnu_getopt ignore_case /;
 # activity has occurred since the last time it checked. If too much time
 # passes without activity, it kills the job
 
-my $bindir = "@X_BINDIR@";
+my $bindir = "$FindBin::Bin/../bin";
 my $prog = "scr_watchdog";
 my $scr_flush_file = "scr_flush_file";
 

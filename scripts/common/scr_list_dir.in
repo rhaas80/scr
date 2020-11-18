@@ -1,6 +1,7 @@
 #!/usr/bin/perl -w
 use strict;
-use lib '@X_DATADIR@/scr';
+use FindBin;
+use lib "$FindBin::Bin/../share/scr";
 use scr_param;
 use Getopt::Long qw/ :config gnu_getopt ignore_case /;
 
@@ -15,7 +16,7 @@ use Getopt::Long qw/ :config gnu_getopt ignore_case /;
 # TODO: read cache directory from config file
 my $prog = "scr_list_dir";
 
-my $bindir = "@X_BINDIR@";
+my $bindir = "$FindBin::Bin/../bin";
 
 my $param = new scr_param();
 

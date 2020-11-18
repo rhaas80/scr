@@ -5,8 +5,8 @@
 launcher="lrun"
 prog="scr_${launcher}"
 
-libdir="@X_LIBDIR@"
-bindir="@X_BINDIR@"
+libdir="$(cd "$(dirname "$0")/../lib" ; pwd -P)"
+bindir="$(cd "$(dirname "$0")" ; pwd -P)"
 
 # Print usage
 if [ -z "$1" ]; then

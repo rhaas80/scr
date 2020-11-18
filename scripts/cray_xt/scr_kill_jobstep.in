@@ -5,11 +5,11 @@
 
 use strict;
 use Getopt::Long qw/ :config gnu_getopt ignore_case /;
-use lib '@X_DATADIR@/scr';
+use FindBin;
 
 my $prog = "scr_kill_jobstep";
 
-my $bin = "@X_BINDIR@";
+my $bin = "$FindBin::Bin";
 
 my $killCmd = "apkill";
 

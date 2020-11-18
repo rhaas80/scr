@@ -19,7 +19,7 @@ fi
 start_time=`date`
 start_secs=`date +%s`
 
-bindir="@X_BINDIR@"
+bindir="$(cd "$(dirname "$0")" ; pwd -P)"
 
 prog="scr_prerun"
 

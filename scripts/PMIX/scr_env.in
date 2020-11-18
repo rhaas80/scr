@@ -1,11 +1,12 @@
 #!/usr/bin/perl -w
 use strict;
 use Getopt::Long qw/ :config gnu_getopt ignore_case /;
-use lib '@X_DATADIR@/scr';
+use FindBin;
+use lib "$FindBin::Bin/../share/scr";
 use scr_hostlist;
 my $prog = "scr_env";
 
-my $bin = "@X_BINDIR@";
+my $bin = "$FindBin::Bin";
 my $scr_nodes_file = "$bin/scr_nodes_file";
 
 sub print_usage
