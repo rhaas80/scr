@@ -2764,20 +2764,12 @@ const char* SCR_Config(const char* config_string)
         toplevel_hash = kvtree_new();
       }
 
-      /* lookup hash for top level value, as in "0" */
-      kvtree* toplevel_value_hash = kvtree_get(toplevel_hash, toplevel_value);
-      if (toplevel_value_hash == NULL) {
-        toplevel_value_hash = kvtree_set(toplevel_hash, toplevel_value, kvtree_new());
-      }
-
-      /* copy hash provided by user into two-level parameter */
-      kvtree_merge(toplevel_value_hash, value_hash);
+      /* set values provided by user in two-level parameter */
+      kvtree_set(toplevel_hash, toplevel_value, value_hash);
 
       /* need to overwrite the full toplevel hash since there is no function to
        * modify it */
       scr_param_set_hash(toplevel_key, toplevel_hash);
-
-      kvtree_delete(&value_hash);
 
       /* do not free toplevel_hash since I passed ownership to the parameter code */
     }
